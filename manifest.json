@@ -1,0 +1,33 @@
+{
+  "id": "./",
+  "name": "Tienda Escolar",
+  "short_name": "Tienda",
+  "description": "PWA de ventas de práctica para la Unidad 2",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "categories": ["shopping", "education"],
+  "background_color": "#f1f5f4",
+  "theme_color": "#0e6b5c",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

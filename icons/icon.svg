@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Tienda Escolar">
+  <rect width="128" height="128" rx="28" fill="#0e6b5c"/>
+  <path d="M40 48 L44 34 H84 L88 48" fill="none" stroke="#f1f5f4" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="34" y="48" width="60" height="46" rx="8" fill="#f1f5f4"/>
+  <circle cx="64" cy="71" r="8" fill="#ff7a45"/>
+</svg>

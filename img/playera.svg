@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Playera">
+  <rect width="100" height="100" rx="14" fill="#0e6b5c"/>
+  <path d="M38 16 L50 24 L62 16 L84 30 L74 46 L64 39 L64 86 L36 86 L36 39 L26 46 L16 30 Z" fill="#ffffff"/>
+  <path d="M42 16 Q50 26 58 16" fill="none" stroke="#0e6b5c" stroke-width="4"/>
+</svg>

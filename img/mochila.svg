@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Mochila">
+  <rect width="100" height="100" rx="14" fill="#142523"/>
+  <path d="M32 24 Q32 10 50 10 Q68 10 68 24 V30 H32 Z" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <rect x="26" y="28" width="48" height="58" rx="12" fill="#ffffff"/>
+  <rect x="38" y="44" width="24" height="26" rx="5" fill="#142523" opacity=".55"/>
+  <rect x="30" y="30" width="6" height="20" rx="3" fill="#142523" opacity=".3"/>
+  <rect x="64" y="30" width="6" height="20" rx="3" fill="#142523" opacity=".3"/>
+</svg>

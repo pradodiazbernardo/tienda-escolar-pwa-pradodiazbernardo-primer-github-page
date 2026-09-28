@@ -1,0 +1,32 @@
+<!-- Plantilla Django: mezcla HTML normal con etiquetas especiales de Django -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Catálogo (SSR) — Demo Django</title>
+  <style>
+    /* Estilos mínimos solo para que se lea bien en la demo de clase */
+    body { font-family: system-ui, sans-serif; background: #f1f5f4; color: #142523; margin: 2rem; }
+    h1 { color: #0e6b5c; }
+    ul { list-style: none; padding: 0; }
+    li { background: #fff; border: 1px solid #d7e0dc; border-radius: 8px; padding: .75rem 1rem; margin-bottom: .5rem; }
+    .precio { font-weight: bold; color: #ff7a45; }
+  </style>
+</head>
+<body>
+  <h1>Catálogo renderizado en el servidor (SSR)</h1>
+  <p>Este HTML ya viene con los productos escritos. Haz "Ver código fuente" (Ctrl+U) y
+     compara: aquí SÍ aparecen los nombres y precios en el HTML crudo.</p>
+
+  <ul>
+    <!-- el bucle "for" recorre la lista "productos" que la vista (views.py) mandó en el contexto -->
+    {% for producto in productos %}
+      <li>
+        <strong>{{ producto.nombre }}</strong> —
+        <span class="precio">${{ producto.precio }}</span>
+        (stock: {{ producto.stock }})
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
