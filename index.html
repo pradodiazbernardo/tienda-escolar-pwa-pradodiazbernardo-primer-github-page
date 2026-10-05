@@ -94,5 +94,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="js/geolocalizacion.js"></script>
   <script src="js/app.js"></script>
+  <!-- Registro del Service Worker. Va aquí, dentro del HTML y en una sola línea
+       (navigator.serviceWorker.register("sw.js")), porque así lo detecta PWABuilder:
+       lee el index.html buscando ese texto, y si no lo halla abre la página y pregunta
+       de inmediato si ya hay un Service Worker; por eso no esperamos al evento "load". -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+        .then((registro) => console.log("Service Worker registrado con éxito:", registro.scope))
+        .catch((error) => console.error("No se pudo registrar el Service Worker:", error));
+    }
+  </script>
 </body>
 </html>
