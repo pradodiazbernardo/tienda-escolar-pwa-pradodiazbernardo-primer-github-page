@@ -16,14 +16,16 @@ body {
   justify-content: space-between;
 }
 
-/* .pill: la "píldora" que muestra si hay conexión o no (la mueve app.js) */
+/* .pill: la "píldora" que muestra si hay conexión o no (la mueve app.js).
+   El fondo es un verde MÁS OSCURO que la barra: con el blanco semitransparente de
+   antes el texto blanco quedaba con contraste 4.13:1 y la norma WCAG pide 4.5:1. */
 .pill {
-  background: rgba(255,255,255,.2);
+  background: rgba(0,0,0,.25);
   border-radius: 999px;
   padding: .25rem .75rem;
   font-size: .8rem;
 }
-.pill.sin-conexion { background: #ff7a45; }
+.pill.sin-conexion { background: #c2410c; } /* naranja oscuro: 5.2:1 con texto blanco */
 
 main {
   max-width: 720px;
@@ -61,7 +63,22 @@ section {
   background: #f1f5f4;
 }
 .producto strong { display: block; margin-bottom: .25rem; }
-.producto .precio { color: #ff7a45; font-weight: bold; }
+/* #c2410c en vez de #ff7a45: el naranja claro daba contraste 2.58:1 sobre blanco */
+.producto .precio { color: #c2410c; font-weight: bold; }
+
+/* Tarjetas esqueleto (ver index.html): ocupan el mismo espacio que las reales
+   mientras llega catalogo.json, así nada se mueve de lugar (CLS ≈ 0) */
+.producto--cargando strong,
+.producto--cargando .precio,
+.producto--cargando p {
+  background: #e8f0ed;
+  border-radius: 4px;
+  color: transparent;
+}
+.producto--cargando strong { width: 70%; }
+.producto--cargando .precio { display: inline-block; width: 30%; }
+.producto--cargando p { width: 45%; }
+.producto--cargando button { visibility: hidden; }
 
 button {
   background: #0e6b5c;
@@ -118,7 +135,7 @@ button:hover { background: #0a4f45; }
   font-variant-numeric: tabular-nums;
 }
 
-.carrito-precio { font-weight: bold; color: #ff7a45; white-space: nowrap; }
+.carrito-precio { font-weight: bold; color: #c2410c; white-space: nowrap; }
 
 .carrito-quitar {
   background: transparent;

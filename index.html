@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tienda Escolar — PWA de ventas</title>
+  <!-- La descripción es el texto que Google muestra bajo el título en los
+       resultados de búsqueda (Lighthouse la revisa en la categoría SEO) -->
+  <meta name="description" content="Tienda Escolar de la UTH: catálogo de productos, carrito de compras y ubicación de la sucursal, disponible incluso sin conexión.">
 
   <!-- Estas 3 líneas son las que convierten este sitio en una PWA instalable -->
   <link rel="manifest" href="manifest.json">
@@ -34,11 +37,18 @@
     <!-- ---- Sección 1: Catálogo (CSR) ---- -->
     <section>
       <h2>Catálogo</h2>
-      <!-- Este div empieza VACÍO a propósito: si ves el código fuente (Ctrl+U)
-           no verás ningún producto aquí. JavaScript (csr.js) lo llena DESPUÉS
-           de que la página ya cargó: por eso es "Renderizado en el Cliente" (CSR). -->
-      <div id="catalogo" class="grid">
-        <p>Cargando catálogo…</p>
+      <!-- Este div no trae productos reales: si ves el código fuente (Ctrl+U)
+           solo verás tarjetas "esqueleto" vacías. JavaScript (csr.js) pone los
+           productos DESPUÉS de que la página ya cargó: por eso es "Renderizado en
+           el Cliente" (CSR).
+           Los esqueletos miden lo mismo que una tarjeta real (una por cada producto
+           de catalogo.json) para que el Carrito no "brinque" hacia abajo cuando
+           llegan los datos. Ese brinco es lo que Lighthouse mide como CLS. -->
+      <div id="catalogo" class="grid" aria-busy="true" aria-label="Cargando catálogo">
+        <div class="producto producto--cargando" aria-hidden="true"><div class="producto__foto"></div><strong>&nbsp;</strong><span class="precio">&nbsp;</span><p>&nbsp;</p><button type="button" disabled>Agregar al carrito</button></div>
+        <div class="producto producto--cargando" aria-hidden="true"><div class="producto__foto"></div><strong>&nbsp;</strong><span class="precio">&nbsp;</span><p>&nbsp;</p><button type="button" disabled>Agregar al carrito</button></div>
+        <div class="producto producto--cargando" aria-hidden="true"><div class="producto__foto"></div><strong>&nbsp;</strong><span class="precio">&nbsp;</span><p>&nbsp;</p><button type="button" disabled>Agregar al carrito</button></div>
+        <div class="producto producto--cargando" aria-hidden="true"><div class="producto__foto"></div><strong>&nbsp;</strong><span class="precio">&nbsp;</span><p>&nbsp;</p><button type="button" disabled>Agregar al carrito</button></div>
       </div>
     </section>
 

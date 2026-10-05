@@ -1,0 +1,3 @@
+servidor-ssr-pdb/venv/
+servidor-ssr-pdb/db.sqlite3
+__pycache__/

@@ -10,8 +10,10 @@ const contenedorCatalogo = document.getElementById("catalogo");
 fetch("catalogo.json")
   .then((respuesta) => respuesta.json()) // convierte el texto recibido en un array de objetos JS
   .then((productos) => {
-    // 3) Ya tenemos los productos: borramos el "Cargando…" y dibujamos las tarjetas
+    // 3) Ya tenemos los productos: borramos las tarjetas esqueleto y dibujamos las reales
     contenedorCatalogo.innerHTML = "";
+    contenedorCatalogo.removeAttribute("aria-busy");
+    contenedorCatalogo.removeAttribute("aria-label");
 
     productos.forEach((producto) => {
       // creamos un <div class="producto"> por cada producto, desde JavaScript puro
@@ -38,5 +40,7 @@ fetch("catalogo.json")
   .catch((error) => {
     // si algo falla (por ejemplo, sin conexión y sin caché), avisamos en pantalla
     contenedorCatalogo.innerHTML = "<p>No se pudo cargar el catálogo. Intenta más tarde.</p>";
+    contenedorCatalogo.removeAttribute("aria-busy");
+    contenedorCatalogo.removeAttribute("aria-label");
     console.error("Error al cargar catálogo:", error);
   });
